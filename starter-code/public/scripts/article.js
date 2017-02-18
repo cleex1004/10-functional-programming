@@ -35,7 +35,6 @@
     Article.all.push(new Article(ele));
   });
   */
-
   };
 
   Article.fetchAll = callback => {
