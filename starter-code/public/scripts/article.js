@@ -25,9 +25,11 @@
   Article.loadAll = rows => {
     rows.sort((a,b) => (new Date(b.publishedOn)) - (new Date(a.publishedOn)));
 
-    // TODO: Refactor this forEach code, by using a `.map` call instead, since want we are trying to accomplish
+    // DONE: Refactor this forEach code, by using a `.map` call instead, since want we are trying to accomplish
     // is the transformation of one colleciton into another.
-
+    Article.all = rows.map(function(ele) {
+      return new Article(ele);
+    });
     /* OLD forEach():
     rawData.forEach(function(ele) {
     Article.all.push(new Article(ele));
