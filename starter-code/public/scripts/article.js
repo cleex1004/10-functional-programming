@@ -59,14 +59,20 @@
     )
   };
 
-  // TODO: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
+  // DONE: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
   Article.numWordsAll = () => {
-    return Article.all.map().reduce()
+    return Article.all.map(function(z) {
+      return z.body.split(' ').length;
+    }).reduce(function(acc, current) {
+      return acc + current;
+    })
   };
 
   // TODO: Chain together a `map` and a `reduce` call to produce an array of unique author names.
   Article.allAuthors = () => {
-    return Article.all.map().reduce();
+    return Article.all.map(function() {
+      return z.author.
+    }).reduce();
   };
 
   Article.numWordsByAuthor = () => {
@@ -118,5 +124,5 @@
       .then(console.log)
       .then(callback);
   };
-  module.Article.all = Article.all;
+  module.Article = Article;
 })(window);
